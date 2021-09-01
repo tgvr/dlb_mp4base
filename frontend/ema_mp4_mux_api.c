@@ -517,6 +517,7 @@ ema_mp4_mux_start(ema_mp4_ctrl_handle_t handle)
             if(parser->stream_type == STREAM_TYPE_VIDEO)
             {
                 handle->usr_cfg_ess[es_idx].alternate_group = 1;
+                handle->usr_cfg_ess[es_idx].sample_entry_name_flag = 1; /** 0: "hev1"; 1: "hvc1" */
                 if(has_video)
                     handle->usr_cfg_ess[es_idx].force_tkhd_flags &=  0xE;
                 has_video = 1;
