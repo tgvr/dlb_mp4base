@@ -1080,7 +1080,7 @@ parser_hevc_get_sample(parser_handle_t parser, mp4_sample_handle_t sample)
         mp4ff_dsi->dsi_in_mdat = 0;
     }
     
-    if (parser->dv_bl_non_comp_flag)
+    if (IS_FOURCC_EQUAL(parser->dsi_name,"dvhe")  && parser->dv_bl_non_comp_flag)
     {
         mp4ff_dsi->dsi_in_mdat = 1;
     }
